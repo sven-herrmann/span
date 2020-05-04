@@ -153,7 +153,7 @@ template <typename E, std::size_t S>
 struct span_storage {
     constexpr span_storage() noexcept = default;
 
-    constexpr span_storage(E* ptr, std::size_t /*unused*/) noexcept : ptr(ptr)
+    constexpr span_storage(E* nptr, std::size_t /*unused*/) noexcept : ptr(nptr)
     {}
 
     E* ptr = nullptr;
@@ -164,8 +164,8 @@ template <typename E>
 struct span_storage<E, dynamic_extent> {
     constexpr span_storage() noexcept = default;
 
-    constexpr span_storage(E* ptr, std::size_t size) noexcept
-        : ptr(ptr), size(size)
+    constexpr span_storage(E* nptr, std::size_t nsize) noexcept
+        : ptr(nptr), size(nsize)
     {}
 
     E* ptr = nullptr;
