@@ -1,4 +1,3 @@
-
 cmake_minimum_required(VERSION 3.8)
 project(span LANGUAGES CXX)
 
@@ -11,4 +10,6 @@ target_compile_features(span INTERFACE cxx_std_11)
 
 set(TCB_SPAN_TEST_CXX_STD 11 CACHE STRING "C++ standard version for testing")
 
-add_subdirectory(test)
+if(BUILD_TCB_SPAN_TESTS)
+  add_subdirectory(test)
+endif(BUILD_TCB_SPAN_TESTS)
