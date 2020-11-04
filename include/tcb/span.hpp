@@ -77,7 +77,7 @@ inline void contract_violation(const char* msg)
 #if !defined(TCB_SPAN_NO_CONTRACT_CHECKING)
 #define TCB_SPAN_STRINGIFY(cond) #cond
 #define TCB_SPAN_EXPECT(cond)                                                  \
-    cond ? (void) 0 : contract_violation("Expected " TCB_SPAN_STRINGIFY(cond))
+    cond ? (void) 0 : tcb::contract_violation("Expected " TCB_SPAN_STRINGIFY(cond))
 #else
 #define TCB_SPAN_EXPECT(cond)
 #endif
